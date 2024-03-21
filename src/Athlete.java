@@ -1,4 +1,3 @@
-package test;
 public class Athlete {
 	private String name;
 	private Grade [] grades;
@@ -63,9 +62,12 @@ public class Athlete {
 	public Boolean isBetter (Athlete a) {
 		for (int i = 0; i < grades.length; i++) {
 			if (grades[i] != null) {
-
+				if(allGradesAbove(this.grades[i].getScore())) {
+					return true;
+				}
 			}
 		}
+		return false;
 	}
 	public String getName() {
 		return name;
